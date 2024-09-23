@@ -68,7 +68,7 @@ class CheckOneProduct(unittest.TestCase):
         self.driver.find_element(By.XPATH, '//a[@data-test="shopping-cart-link"]').click()
         items = self.driver.find_elements(By.XPATH, '//div[@data-test="inventory-item-name"]')
 
-        assert product_name in [item.text for item in items], "Chosen product is not in the cart"
+        self.assertTrue(product_name in [item.text for item in items], "Chosen product is not in the cart")
         logger.info('Product actualy is in the cart..')
 
         logger.info('Confirm the order..')

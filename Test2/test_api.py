@@ -11,7 +11,7 @@ logger.level = logging.INFO
 from dotenv import dotenv_values
 
 
-config = dotenv_values(".env.exm")
+config = dotenv_values(".env")
 
 stream_handler = logging.StreamHandler(sys.stdout)
 logger.addHandler(stream_handler)
@@ -47,8 +47,8 @@ class CheckOneProduct(unittest.TestCase):
 
         logger.info(self.repos)
 
-        assert config["REPONAME"] in [each["name"] for each in self.repos.json()], \
-            "Name is not in User Repository List"
+        self.assertTrue(config["REPONAME"] in [each["name"] for each in self.repos.json()], \
+            "Name is not in User Repository List")
 
 
     def tearDown(self):

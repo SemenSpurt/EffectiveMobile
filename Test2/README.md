@@ -3,7 +3,7 @@
 ## Set up environment 
 python -m venv venv && source venv/bin/activate
 
-## Fill variables in .env file aacording to your data
+## Fill variables in .env file according to your data
 ##### USERNAME : Your Github Username
 ##### APITOKEN  : Personal Access Token
 ##### REPONAME : The name of new Repo
